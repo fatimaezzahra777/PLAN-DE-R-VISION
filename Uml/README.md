@@ -18,7 +18,8 @@ auteur, isbn). Puis, la critiquer.
 2. Challenge 2 : Refactoriser la classe Livre en ajoutant les méthodes
 essentielles (emprunter(), retourner(), afficherDetails()).
 
-3. Challenge 3 : Modéliser une classe Etudiant et une classe Cours. Placer
+3. Challenge 3 : Modéliser une classe Etudiant et une classe Cours. 
+Placer
 correctement la méthode inscriptionAuCours() dans la classe la plus
 pertinente et justifier le choix.
 -J'ai ajouté la methode inscriptionAuCours() dans la classe etudiant car il est celui qui s'inscrit dans le cours
