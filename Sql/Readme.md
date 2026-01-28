@@ -42,3 +42,42 @@ WHERE prix = 200;
 
 DELETE FROM Produits
 WHERE id = 3;
+
+
+Jour 3 : SQL - Agrégats Simples
+
+● Objectif du jour : Maîtriser l'utilisation des fonctions d'agrégation pour résumer des
+données.
+
+● Questions Théoriques :
+1. À quoi servent les fonctions COUNT, SUM, et AVG ?
+Count pour compter le nombre de row
+Sum pour claculer la somme de deux ou plusieurs valeurs 
+Avg pour calcule la moyen des valeurs
+
+2. Peut-on utiliser COUNT(*) et COUNT(colonne) de manière interchangeable ?
+Pourquoi ?
+Non c'est pas interchangeable car count(*) compter le nombre de tous les lignes meme si le null
+pour count(colonne) compter le nombre de les lignes n'est pas null
+
+3. Comment MAX et MIN peuvent-ils être utilisés sur des dates ou des chaînes de
+caractères ?
+max : la date plus recent
+min : la date plus ancienne
+pour chaine de caractere c'est par un order alphabetique
+
+
+● Challenges Pratiques :
+1. Challenge 1 : Écrire la requête pour afficher le nombre total de commandes.
+select count(*) from commandes;
+
+
+2. Challenge 2 : Écrire la requête pour calculer le prix moyen de tous les produits.
+select avg(prix) from produits;
+
+
+3. Challenge 3 : Écrire la requête pour trouver le montant de la commande la
+plus chère.
+
+select max(montant) from commande;
+
