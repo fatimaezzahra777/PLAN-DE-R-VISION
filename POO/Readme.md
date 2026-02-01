@@ -44,3 +44,94 @@ $voiture2 = new Voiture("BMW", 5);
 
 $voiture1->accelerer();
 $voiture1->accelerer();
+
+
+
+
+
+Jour 5 : PHP POO - Encapsulation
+● Objectif du jour : Maîtriser les niveaux de visibilité (public, private, protected) et
+l'utilisation des getters/setters.
+
+
+● Questions Théoriques :
+1. Qu’est-ce que l’encapsulation ? Quel est son but ?
+L'encapsulation est un principe de la programmation oriente objet pour protege les donnees
+
+2. Quelle est la différence entre public, private et protected ?
+public les attributs et les methodes sont accessibles par tous les classe
+private les attributs et les methodes sont accessibles seulement dans le meme classe actuelle
+protected les attributs et les methodes sont accessibles seulement par les classe fille
+
+3. À quoi servent les getters et setters ? Est-ce toujours nécessaire d'en avoir pour
+chaque attribut ?
+getters et setters des methodes pour acceder et modifier sur les attributs
+
+● Challenges Pratiques :
+1. Challenge 1 : Modifier la classe Voiture : mettre l'attribut vitesse en private.
+class Voiture(){
+    private $marque;
+    private $modele;
+    private $vitesse;
+
+    public function accelerer(){
+        $this->vitesse += 3
+    }
+    
+}
+
+2. Challenge 2 : Créer un getter getVitesse() et un setter setVitesse(int $v)
+qui empêche d'assigner une vitesse négative.
+class Voiture(){
+    private $marque;
+    private $modele;
+    private $vitesse;
+
+    public function accelerer(){
+        $this->vitesse += 3
+    }
+
+    public function getVitesse(): int{
+        return $this->vitesse;
+    }
+
+    public function setVitesse(int $v): void{
+        if ($v < 0) {
+            return;
+        }
+        $this->vitesse = $v;
+    }
+}
+
+3. Challenge 3 : Créer une classe CompteBancaire avec un attribut solde privé.
+Implémenter les méthodes deposer() et retirer() en s'assurant que le solde
+ne puisse pas devenir négatif.
+
+Class CompteBancaire{
+    private $solde = 0;
+
+    public function getSolde(){
+        return $this->solde;
+    }
+
+    public function deposer(float $montant){
+        if ($montant <= 0) {
+            return;
+        }
+
+        $this->solde += $montant;
+    }
+
+    public function retirer(float $montant){
+        if ($montant <= 0) {
+            return;
+        }
+
+        if ($montant > $this->solde) {
+            return;
+        }
+
+        $this->solde -= $montant;
+    }
+}
+
